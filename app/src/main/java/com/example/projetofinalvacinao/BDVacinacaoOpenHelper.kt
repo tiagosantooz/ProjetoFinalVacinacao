@@ -14,10 +14,10 @@ class BDVacinacaoOpenHelper (context: Context?)
          */
         override fun onCreate(db: SQLiteDatabase?) {
             if (db != null) {
-                /* TabelaMarcarVacina1(db).cria()
-                TabelaMarcarVacina2(db).cria()
-                TabelaCovidNatural(db).cria()
-                TabelaPaciente(db).cria() */
+                TabelaMarcarVacina1(db).cria()
+                /*TabelaMarcarVacina2(db).cria()
+                TabelaCovidNatural(db).cria()*/
+                TabelaPaciente(db).cria()
             }
         }
 

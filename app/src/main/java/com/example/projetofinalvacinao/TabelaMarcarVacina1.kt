@@ -7,8 +7,9 @@ import android.provider.BaseColumns
 
 class TabelaMarcarVacina1 (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
+
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA ($CAMPO_DATA INTEGER NOT NULL, $CAMPO_MARCA TEXT NOT NULL)")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_DATA INTEGER NOT NULL, $CAMPO_MARCA TEXT NOT NULL)")
     }
 
     fun insert(values: ContentValues): Long {
@@ -40,7 +41,7 @@ class TabelaMarcarVacina1 (db: SQLiteDatabase) {
         const val CAMPO_MARCA = "marca vacina"
 
 
-        val TODAS_COLUNAS = arrayOf(CAMPO_DATA, CAMPO_MARCA)
+        val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_DATA, CAMPO_MARCA)
     }
 }
 

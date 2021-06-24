@@ -9,7 +9,7 @@ class TabelaCovidNatural (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
 
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA ($CAMPO_DATA_INFEÇÃO INTEGER NOT NULL, $CAMPO_SINTOMAS TEXT NOT NULL, $CAMPO_DATA_VACINA)")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT $CAMPO_DATA_INFEÇÃO INTEGER NOT NULL, $CAMPO_SINTOMAS TEXT NOT NULL, $CAMPO_DATA_VACINA)")
     }
 
     fun insert(values: ContentValues): Long {
